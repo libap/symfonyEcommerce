@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Bienvenue sur notre site {% endblock %}
+
+{% block body %}
+    <h1>Bienvenue sur le site de vente en ligne de jeux vidéo</h1>
+
+    <article>
+        <h2>Name: {{ product.name }}</h2>
+        <p>Description: {{ product.description }}</p>
+        <small>Price: {{ product.price }} €</small>
+        <p>Platforms: {{ product.platforms }}</p>
+        <p>Release date: {{ product.releaseDate|date('d/m/y') }}</p>
+        <p>Username: {{username}}</p>
+    </article>
+{% endblock %}

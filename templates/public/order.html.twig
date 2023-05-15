@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Vous êtes sur la page de commande ! {% endblock %}
+
+{% block body %}
+
+    <article>
+        <h2>Name: {{ product.name }}</h2>
+        <p>Description: {{ product.description }}</p>
+        <small>Price: {{ product.price }} €</small>
+        <p>Platforms: {{ product.platforms }}</p>
+        <p>Release date: {{ product.releaseDate|date('d/m/y') }}</p>
+        <p>Username: {{username}}</p>
+    </article>
+    <p>AAAAAAAAAAAAAAAAA</p>
+
+{% endblock %}

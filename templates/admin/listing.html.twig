@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Liste des commandes</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Date</th>
+                <th>Statut</th>
+                <th>Utilisateur</th>
+                <th>Liste des produits</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for order in list %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.date|date('d/m/Y') }}</td>
+                <td>{{ order.status }}</td>
+                <td>{{ order.user.firstName }} {{ order.user.lastName }}</td>
+                <td>
+                    <ul>
+                        {% for product in order.products %}
+                            <p>{{ product.name }} - {{ product.price }} €</p>
+                        {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
